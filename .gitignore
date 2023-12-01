@@ -2,4 +2,4 @@
 temp
 .env
 __pycache__
-secret/google_token.json
+classes/secret/google_token.json
