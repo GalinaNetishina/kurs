@@ -9,10 +9,7 @@ from googleapiclient.http import MediaFileUpload
 
 class GooClient:
     """
-    класс для google-api, создается по токену и scopes
-
-    атрибуты:
-    folder(по умолчанию vk-backup) можно указать при создании экземпляра
+    класс для google-api, создается по токену, scopes, имени папки
 
     методы:
     load_file(path, name) принимает путь к файлу на компьютере и имя,
@@ -21,7 +18,7 @@ class GooClient:
 
     get_list_files() возвращает список файлов, можно передать аргумент q="запрос"
         """
-    def __init__(self, token, scopes, fold_name="vk-backup"):
+    def __init__(self, token, scopes, fold_name):
         creds = None
         if os.path.exists(token):
             creds = Credentials.from_authorized_user_file(token, scopes)
